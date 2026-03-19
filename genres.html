@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genres | The Archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Reusing main variables -->
+    <link rel="stylesheet" href="genres.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="cursor-outer"></div>
+    <div class="cursor-inner"></div>
+
+    <nav id="navbar" class="scrolled"> <!-- Always glassmorphism on subpages -->
+        <div class="nav-container">
+            <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">THE ARCHIVE</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="genres.html" class="active">Genres</a></li>
+                <li><a href="#">New Releases</a></li>
+                <li class="cart-link"><a href="#"><i class="fas fa-shopping-basket"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="genre-page-wrapper section-bg">
+        <div class="overlay"></div>
+        
+        <div class="genre-container">
+            <!-- Sidebar Index -->
+            <aside class="genre-sidebar">
+                <h2 class="sidebar-title">The Index</h2>
+                <ul class="genre-list">
+                    <li class="genre-item active" data-genre="all">All Collections</li>
+                    <li class="genre-item" data-genre="classic">Classic Literature</li>
+                    <li class="genre-item" data-genre="philosophy">Philosophy</li>
+                    <li class="genre-item" data-genre="mystery">Mystery & Noir</li>
+                    <li class="genre-item" data-genre="poetry">Poetry</li>
+                    <li class="genre-item" data-genre="history">History</li>
+                </ul>
+            </aside>
+
+            <!-- Content Area -->
+            <section class="genre-content">
+                <div class="content-header">
+                    <h1 id="activeGenreTitle">All Collections</h1>
+                    <p id="genreDescription">Exploring the full breadth of the Archive's rare acquisitions.</p>
+                </div>
+
+                <div class="book-grid" id="genreGrid">
+                    <!-- Dynamically populated by JS -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="genres.js"></script>
+</body>
+</html>

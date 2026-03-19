@@ -1,0 +1,115 @@
+/* Sidebar & Layout */
+.genre-page-wrapper {
+    padding-top: 120px;
+    background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=2000');
+    min-height: 100vh;
+}
+
+.genre-container {
+    display: flex;
+    gap: 60px;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.genre-sidebar {
+    flex: 0 0 250px;
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+}
+
+.sidebar-title {
+    font-family: var(--font-heading);
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--gold-semi);
+    padding-bottom: 10px;
+}
+
+.genre-list {
+    list-style: none;
+}
+
+.genre-item {
+    padding: 15px 0;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--cream);
+    opacity: 0.6;
+    transition: var(--transition);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+}
+
+.genre-item::before {
+    content: '—';
+    margin-right: 15px;
+    color: var(--gold);
+    transition: var(--transition);
+}
+
+.genre-item:hover, .genre-item.active {
+    opacity: 1;
+    color: var(--gold);
+    padding-left: 10px;
+}
+
+/* Content Area */
+.genre-content {
+    flex: 1;
+}
+
+.content-header {
+    margin-bottom: 50px;
+}
+
+.content-header h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.content-header p {
+    font-style: italic;
+    color: var(--gold);
+    opacity: 0.8;
+}
+
+/* Animations for Grid Filtering */
+.book-card {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .genre-container {
+        flex-direction: column;
+    }
+    .genre-sidebar {
+        flex: none;
+        width: 100%;
+        position: relative;
+        top: 0;
+    }
+    .genre-list {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        padding-bottom: 20px;
+    }
+    .genre-item {
+        white-space: nowrap;
+        border-bottom: none;
+    }
+}
